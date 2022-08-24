@@ -9,6 +9,8 @@ from numbers_and_series.prime_numbers import (is_prime, prime_numbers,
     prime_numbers_sieve_method)
 from numbers_and_series.fibonacci_numbers import (is_fibonacci_series_number,
     nth_fibonacci_series_number, fibonacci_series)
+from numbers_and_series.lucas_numbers import (nth_lucas_series_number,
+    lucas_series)
 
 class TestNumbers(unittest.TestCase):
     '''
@@ -45,3 +47,12 @@ class TestNumbers(unittest.TestCase):
 
         fibonacci = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
         self.assertEqual(fibonacci_series(10), fibonacci)
+
+    def test_lucas_numbers(self):
+        '''
+            Function to test lucas numbers methods
+        '''
+        self.assertEqual(nth_lucas_series_number(10), 123)
+
+        lucas = [2, 1, 3, 4, 7, 11, 18, 29, 47, 76]
+        self.assertEqual(lucas_series(10), lucas)
