@@ -11,6 +11,7 @@ from numbers_and_series.fibonacci_numbers import (is_fibonacci_series_number,
     nth_fibonacci_series_number, fibonacci_series)
 from numbers_and_series.lucas_numbers import (nth_lucas_series_number,
     lucas_series)
+from numbers_and_series.is_armstrong_number import is_armstrong_number
 
 class TestNumbers(unittest.TestCase):
     '''
@@ -56,3 +57,11 @@ class TestNumbers(unittest.TestCase):
 
         lucas = [2, 1, 3, 4, 7, 11, 18, 29, 47, 76]
         self.assertEqual(lucas_series(10), lucas)
+
+    def test_is_armstrong_number(self):
+        '''
+            Function to test if a number is armstrong
+        '''
+        self.assertTrue(is_armstrong_number(9))
+        self.assertFalse(is_armstrong_number(2345))
+        self.assertTrue(is_armstrong_number(1634))
