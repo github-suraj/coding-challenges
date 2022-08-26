@@ -14,6 +14,8 @@ from numbers_and_series.lucas_numbers import (nth_lucas_series_number,
 from numbers_and_series.is_armstrong_number import is_armstrong_number
 from numbers_and_series.factorial import (factorial_using_recursion,
     factorial_using_iteration, factorial_using_reduce)
+from numbers_and_series.maximum_subarray_sum import (maximum_subarray_sum_old,
+    maximum_subarray_sum, maximum_subarray_sum_array)
 
 class TestNumbers(unittest.TestCase):
     '''
@@ -102,3 +104,18 @@ class TestNumbers(unittest.TestCase):
         self.assertEqual(factorial_using_recursion(5), 120)
         self.assertEqual(factorial_using_iteration(6), 720)
         self.assertEqual(factorial_using_reduce(7), 5040)
+
+    def test_maximum_subarray_sum(self):
+        '''
+            Function to test maximum subarray sum functions
+        '''
+        raw = {
+            (1, (1,)): [1],
+            (6, (4,-1,2,1)): [-2, 1, -3, 4, -1, 2, 1, -5, 4],
+            (7, (4, -1, -2, 1, 5)): [-2, -3, 4, -1, -2, 1, 5, -3],
+            (23, (5, 4, -1, 7 ,8)): [5, 4, -1, 7 ,8]
+        }
+        for expected, arr in raw.items():
+            self.assertEqual(maximum_subarray_sum_old(arr), expected[0])
+            self.assertEqual(maximum_subarray_sum(arr), expected[0])
+            self.assertEqual(maximum_subarray_sum_array(arr), expected[1])
