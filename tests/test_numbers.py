@@ -4,6 +4,7 @@
 
 import random
 import unittest
+from numbers_and_series.numeric_functions import reverse
 from numbers_and_series.get_missing_number import get_missing_number
 from numbers_and_series.prime_numbers import (is_prime, prime_numbers,
     prime_numbers_sieve_method)
@@ -21,6 +22,12 @@ class TestNumbers(unittest.TestCase):
     '''
         class for unittesting numbers methods / classes
     '''
+    def test_numeric_functions(self):
+        '''
+            Function to test numeric functions
+        '''
+        self.assertEqual(reverse(123456789), 987654321)
+
     def test_get_missing_number(self):
         '''
             Function to test to find missing number from a list

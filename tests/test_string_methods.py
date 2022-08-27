@@ -3,6 +3,7 @@
 '''
 
 import unittest
+from strings.strings_functions import reverse, reverse_phrase
 from strings.generate_words_from_random_string import generate_words_from_random_string
 from strings.check_balanced_brackets import is_balanced_brackets
 
@@ -10,6 +11,13 @@ class TestStringMethods(unittest.TestCase):
     '''
         class for unittesting string methods
     '''
+    def test_strings_functions(self):
+        '''
+            Function to test strings functions
+        '''
+        self.assertEqual(reverse('Python is easy'), 'ysae si nohtyP')
+        self.assertEqual(reverse_phrase('Python is easy'), 'easy is Python')
+
     def test_generate_words_from_random_string(self):
         '''
             Function to test Generate words from random string
