@@ -6,6 +6,7 @@ import unittest
 from strings.strings_functions import reverse, reverse_phrase
 from strings.generate_words_from_random_string import generate_words_from_random_string
 from strings.check_balanced_brackets import is_balanced_brackets
+from strings.is_palindrome import is_string_palindrome, is_phrase_palindrome
 
 class TestStringMethods(unittest.TestCase):
     '''
@@ -35,3 +36,12 @@ class TestStringMethods(unittest.TestCase):
         self.assertTrue(is_balanced_brackets('{Suraj}{[Jaiswal]}'))
         self.assertFalse(is_balanced_brackets('{Suraj[}]{Jaiswal}'))
         self.assertFalse(is_balanced_brackets('{[{]}}'))
+
+    def test_is_palindrome(self):
+        '''
+            Function to test if a string / phrase is palindrome
+        '''
+        self.assertTrue(is_string_palindrome('malayalAM'))
+        self.assertFalse(is_string_palindrome('hello world'))
+        self.assertTrue(is_phrase_palindrome('Too hot to hoot.'))
+        self.assertFalse(is_phrase_palindrome('hello world'))

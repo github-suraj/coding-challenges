@@ -13,6 +13,7 @@ from numbers_and_series.fibonacci_numbers import (is_fibonacci_series_number,
 from numbers_and_series.lucas_numbers import (nth_lucas_series_number,
     lucas_series)
 from numbers_and_series.is_armstrong_number import is_armstrong_number
+from numbers_and_series.is_palindrome import is_palindrome_number
 from numbers_and_series.factorial import (factorial_using_recursion,
     factorial_using_iteration, factorial_using_reduce)
 from numbers_and_series.maximum_subarray_sum import (maximum_subarray_sum_old,
@@ -76,6 +77,13 @@ class TestNumbers(unittest.TestCase):
         self.assertTrue(is_armstrong_number(9))
         self.assertFalse(is_armstrong_number(2345))
         self.assertTrue(is_armstrong_number(1634))
+
+    def test_is_palindrome_number(self):
+        '''
+            Function to test if a number is palindrome
+        '''
+        self.assertTrue(is_palindrome_number(12345678987654321))
+        self.assertFalse(is_palindrome_number(123456789))
 
     def test_factorial(self):
         '''
