@@ -3,7 +3,8 @@
 '''
 
 import unittest
-from strings.strings_functions import reverse, reverse_phrase
+from strings.strings_functions import (reverse, reverse_phrase, is_substring,
+    get_even_length_words, all_vowels_present, remove_duplicates, contains_all_unique)
 from strings.generate_words_from_random_string import generate_words_from_random_string
 from strings.check_balanced_brackets import is_balanced_brackets
 from strings.is_palindrome import is_string_palindrome, is_phrase_palindrome
@@ -16,8 +17,17 @@ class TestStringMethods(unittest.TestCase):
         '''
             Function to test strings functions
         '''
-        self.assertEqual(reverse('Python is easy'), 'ysae si nohtyP')
-        self.assertEqual(reverse_phrase('Python is easy'), 'easy is Python')
+        str1 = 'Python is easy'
+        self.assertEqual(reverse(str1), 'ysae si nohtyP')
+        self.assertEqual(reverse_phrase(str1), 'easy is Python')
+        self.assertTrue(is_substring(str1, 'is'))
+        self.assertFalse(is_substring(str1, 'Is'))
+        self.assertEqual(get_even_length_words(str1), ['Python', 'is', 'easy'])
+        self.assertTrue(all_vowels_present('Hi, how are you?'))
+        self.assertFalse(all_vowels_present('hello world!'))
+        self.assertEqual(remove_duplicates('Malayalam'), 'Maly')
+        self.assertTrue(contains_all_unique('python'))
+        self.assertFalse(contains_all_unique('malayalam'))
 
     def test_generate_words_from_random_string(self):
         '''
