@@ -4,6 +4,7 @@
 
 import unittest
 from dicts.dict_functions import list_of_tuples_to_dict, add_two_dictionaries
+from dicts.nested_dict import DICT, get_topics
 
 class TestDictsMethods(unittest.TestCase):
     '''
@@ -19,3 +20,18 @@ class TestDictsMethods(unittest.TestCase):
         self.assertEqual(list_of_tuples_to_dict(list_of_tup), dict1)
         expected = {'A': 72, 'B': 27, 'C': 53, 'D': 42, 'E': 92, 'F': 94}
         self.assertEqual(add_two_dictionaries(dict1, dict2), expected)
+
+    def test_nested_dict(self):
+        '''
+            Function to test nested dictionary
+        '''
+        expected = [
+            'SERVICE_STATUS_PRESETS',
+            'AIRCRAFT_ACTIVATION',
+            'OUT_OF_SERVICE',
+            'PROMO_CODES_REQUESTS',
+            'BANNERS',
+            'DOCUMENTS',
+            'USER'
+        ]
+        self.assertEqual(get_topics(DICT), expected)
