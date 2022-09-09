@@ -6,6 +6,7 @@ import unittest
 from lists.list_functions import (reverse, swap_elements, numbers_square,
     numbers_cube, list_length, remove_nth_occurrence_from_list,
     is_element_in_list)
+from lists.maximum_square_submatrix import maximum_square_submatrix
 
 class TestListsMethods(unittest.TestCase):
     '''
@@ -33,3 +34,16 @@ class TestListsMethods(unittest.TestCase):
         self.assertEqual(list_length(lst), 6)
         self.assertTrue(is_element_in_list(lst, 'easy'))
         self.assertFalse(is_element_in_list(lst, 'Easy'))
+
+    def test_maximum_square_submatrix(self):
+        get_expected = lambda length: [[1] * length] * length
+        lst = [
+            [0, 1, 1, 0, 1], [1, 1, 0, 1, 0], [0, 1, 1, 1, 0],
+            [1, 1, 1, 1, 0], [1, 1, 1, 1, 1], [0, 0, 0, 0, 0]
+        ]
+        self.assertEqual(maximum_square_submatrix(lst), get_expected(3))
+
+        lst = [
+            [1, 0, 1, 0], [1, 1, 1, 1], [0, 1, 1, 1], [0, 0, 1, 0]
+        ]
+        self.assertEqual(maximum_square_submatrix(lst), get_expected(2))
