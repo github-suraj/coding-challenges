@@ -1,6 +1,6 @@
 '''
     Given a binary matrix,
-        find the maximum size rectangle binary-sub-matrix with all 1’s. 
+        find the maximum size rectangle binary-sub-matrix with all 1’s.
         For example, consider the below binary matrix.
             +---+---+---+---+
             | 0 | 1 | 1 | 0 |

@@ -38,12 +38,12 @@ def maximum_square_submatrix(array):
         for j in range(columns):
             entry = array[i][j]
             if entry and j:
-                entry = 1 + min(sub_array[1][j-1], 
+                entry = 1 + min(sub_array[1][j-1],
                                 min(sub_array[0][j-1], sub_array[1][j])
                             )
             sub_array[0][j], sub_array[1][j] = sub_array[1][j], entry
             max_count = max(max_count, entry)
-    
+
     return [[1 for _ in range(max_count)] for _ in range(max_count)]
 
 

@@ -8,6 +8,7 @@ from strings.strings_functions import (reverse, reverse_phrase, is_substring,
 from strings.generate_words_from_random_string import generate_words_from_random_string
 from strings.check_balanced_brackets import is_balanced_brackets
 from strings.is_palindrome import is_string_palindrome, is_phrase_palindrome
+from strings.count_possible_decodings import count_possible_decodings
 
 class TestStringMethods(unittest.TestCase):
     '''
@@ -55,3 +56,11 @@ class TestStringMethods(unittest.TestCase):
         self.assertFalse(is_string_palindrome('hello world'))
         self.assertTrue(is_phrase_palindrome('Too hot to hoot.'))
         self.assertFalse(is_phrase_palindrome('hello world'))
+
+    def test_count_possible_decodings(self):
+        '''
+            Function to test possible decoding counts for sequence of digits
+        '''
+        self.assertEqual(count_possible_decodings('12321'), 6)
+        self.assertEqual(count_possible_decodings('121'), 3)
+        self.assertEqual(count_possible_decodings('1234'), 3)
