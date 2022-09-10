@@ -18,6 +18,8 @@ from numbers_and_series.factorial import (factorial_using_recursion,
     factorial_using_iteration, factorial_using_reduce)
 from numbers_and_series.maximum_subarray_sum import (maximum_subarray_sum_old,
     maximum_subarray_sum, maximum_subarray_sum_array)
+from numbers_and_series.catalan_numbers import (catalan_numbers,
+    get_catalan_numbers)
 
 class TestNumbers(unittest.TestCase):
     '''
@@ -134,3 +136,11 @@ class TestNumbers(unittest.TestCase):
             self.assertEqual(maximum_subarray_sum_old(arr), expected[0])
             self.assertEqual(maximum_subarray_sum(arr), expected[0])
             self.assertEqual(maximum_subarray_sum_array(arr), expected[1])
+
+    def test_catalan_numbers(self):
+        '''
+            Function to test catalan numbers methods
+        '''
+        expected = [1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862]
+        self.assertEqual(catalan_numbers(10), expected)
+        self.assertEqual(get_catalan_numbers(10), expected)
