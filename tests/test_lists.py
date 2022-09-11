@@ -5,7 +5,7 @@
 import unittest
 from lists.list_functions import (reverse, swap_elements, numbers_square,
     numbers_cube, list_length, remove_nth_occurrence_from_list,
-    is_element_in_list)
+    is_element_in_list, list_xor)
 from lists.maximum_square_submatrix import maximum_square_submatrix
 from lists.maximum_rectangular_submatrix_area import (
     maximum_rectangular_submatrix_area
@@ -37,6 +37,10 @@ class TestListsMethods(unittest.TestCase):
         self.assertEqual(list_length(lst), 6)
         self.assertTrue(is_element_in_list(lst, 'easy'))
         self.assertFalse(is_element_in_list(lst, 'Easy'))
+        self.assertTrue(list_xor(1, [1, 2, 3], [4, 5, 6]))
+        self.assertTrue(list_xor(1, [0, 2, 3], [1, 5, 6]))
+        self.assertFalse(list_xor(1, [1, 2, 3], [1, 5, 6]))
+        self.assertFalse(list_xor(1, [0, 0, 0], [4, 5, 6]))
 
     def test_maximum_square_submatrix(self):
         '''

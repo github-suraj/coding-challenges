@@ -92,6 +92,18 @@ def is_element_in_list(list1, element):
     return False
 
 
+def list_xor(n, list1, list2):
+    '''
+        Function should take three parameters: n, list1 and list2.
+            and return whether n is exclusively in list1 or list2.
+        In other words,
+            if n is in both lists or in none of the lists, return False.
+            If n is in only one of the lists, return True.
+    '''
+    xor = (n in list1, n in list2)
+    return xor.count(True) == 1
+
+
 if __name__ == '__main__':
     lst = [6, 9, 3, 7, 1, 2, 8]
     print(reverse(lst))
@@ -105,3 +117,7 @@ if __name__ == '__main__':
     print(list_length(lst))
     print(is_element_in_list(lst, 'easy'))
     print(is_element_in_list(lst, 'Easy'))
+    print(list_xor(1, [1, 2, 3], [4, 5, 6]))
+    print(list_xor(1, [0, 2, 3], [1, 5, 6]))
+    print(list_xor(1, [1, 2, 3], [1, 5, 6]))
+    print(list_xor(1, [0, 0, 0], [4, 5, 6]))
