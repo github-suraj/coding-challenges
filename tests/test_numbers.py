@@ -4,7 +4,7 @@
 
 import random
 import unittest
-from numbers_and_series.numeric_functions import reverse
+from numbers_and_series.numeric_functions import reverse, format_number
 from numbers_and_series.get_missing_number import get_missing_number
 from numbers_and_series.prime_numbers import (is_prime, prime_numbers,
     prime_numbers_sieve_method)
@@ -30,6 +30,7 @@ class TestNumbers(unittest.TestCase):
             Function to test numeric functions
         '''
         self.assertEqual(reverse(123456789), 987654321)
+        self.assertEqual(format_number(123456789), '123,456,789')
 
     def test_get_missing_number(self):
         '''
