@@ -4,7 +4,8 @@
 
 import unittest
 from strings.strings_functions import (reverse, reverse_phrase, is_substring,
-    get_even_length_words, all_vowels_present, remove_duplicates, contains_all_unique)
+    get_even_length_words, all_vowels_present, remove_duplicates,
+    contains_all_unique, capital_indexes)
 from strings.generate_words_from_random_string import generate_words_from_random_string
 from strings.check_balanced_brackets import is_balanced_brackets
 from strings.is_palindrome import is_string_palindrome, is_phrase_palindrome
@@ -29,6 +30,7 @@ class TestStringMethods(unittest.TestCase):
         self.assertEqual(remove_duplicates('Malayalam'), 'Maly')
         self.assertTrue(contains_all_unique('python'))
         self.assertFalse(contains_all_unique('malayalam'))
+        self.assertEqual(capital_indexes('HeLlO'), [0, 2, 4])
 
     def test_generate_words_from_random_string(self):
         '''

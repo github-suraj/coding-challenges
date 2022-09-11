@@ -69,6 +69,22 @@ def contains_all_unique(string):
     return len(set(string.lower())) == len(string)
 
 
+def capital_indexes(string):
+    '''
+        Write a function named capital_indexes.
+        The function takes a single parameter, which is a string.
+        Your function should return a list of all the indexes in the string
+            that have capital letters.
+        For example,
+            calling capital_indexes("HeLlO") should return the list [0, 2, 4].
+    '''
+    idxs = []
+    for i, char in enumerate(string):
+        if char.isupper():
+            idxs.append(i)
+    return idxs
+
+
 if __name__ == '__main__':
     STR = 'Python is Easy'
     print(f"Reverse of '{STR}' :", reverse(STR))
@@ -81,3 +97,4 @@ if __name__ == '__main__':
     print("Remove duplicates 'Malayalam' :", remove_duplicates('Malayalam'))
     print("contains all unique 'malayalam' :", contains_all_unique('malayalam'))
     print("contains all unique 'python' :", contains_all_unique('python'))
+    print("capital indexes 'HeLlO' :", capital_indexes("HeLlO"))
