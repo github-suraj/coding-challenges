@@ -5,7 +5,7 @@
 import unittest
 from lists.list_functions import (reverse, swap_elements, numbers_square,
     numbers_cube, list_length, remove_nth_occurrence_from_list,
-    is_element_in_list, list_xor)
+    is_element_in_list, list_xor, arrange_numbers)
 from lists.maximum_square_submatrix import maximum_square_submatrix
 from lists.maximum_rectangular_submatrix_area import (
     maximum_rectangular_submatrix_area
@@ -41,6 +41,9 @@ class TestListsMethods(unittest.TestCase):
         self.assertTrue(list_xor(1, [0, 2, 3], [1, 5, 6]))
         self.assertFalse(list_xor(1, [1, 2, 3], [1, 5, 6]))
         self.assertFalse(list_xor(1, [0, 0, 0], [4, 5, 6]))
+        list1 = [20, 3.5, 10, 4.2, -20 , 100, 27, -10, 35, 3.1, 1, -5]
+        expected = [-20, -10, -5, 20, 3.5, 10, 4.2, 100, 27, 35, 3.1, 1]
+        self.assertEqual(arrange_numbers(list1), expected)
 
     def test_maximum_square_submatrix(self):
         '''

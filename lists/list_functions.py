@@ -104,6 +104,24 @@ def list_xor(n, list1, list2):
     return xor.count(True) == 1
 
 
+def arrange_numbers(list1):
+    '''
+        Funcation to arrange list of numbers as;
+        - All negative number should be in left
+        - All positive number should be in right
+    '''
+    list2 = []
+    negative_idx = 0
+    for num in list1:
+        if num < 0:
+            list2.insert(negative_idx, num)
+            negative_idx += 1
+        else:
+            list2.append(num)
+    return list2
+
+
+
 if __name__ == '__main__':
     lst = [6, 9, 3, 7, 1, 2, 8]
     print(reverse(lst))
@@ -121,3 +139,6 @@ if __name__ == '__main__':
     print(list_xor(1, [0, 2, 3], [1, 5, 6]))
     print(list_xor(1, [1, 2, 3], [1, 5, 6]))
     print(list_xor(1, [0, 0, 0], [4, 5, 6]))
+    print(arrange_numbers(
+        [20, 3.5, 10, 4.2, -20 , 100, 27, -10, 35, 3.1, 1, -5]
+    ))
