@@ -10,6 +10,7 @@ from lists.maximum_square_submatrix import maximum_square_submatrix
 from lists.maximum_rectangular_submatrix_area import (
     maximum_rectangular_submatrix_area
 )
+from lists.largest_word import get_largest_word
 
 class TestListsMethods(unittest.TestCase):
     '''
@@ -74,3 +75,11 @@ class TestListsMethods(unittest.TestCase):
             [0, 1, 1], [1, 1, 1], [0, 1, 1]
         ]
         self.assertEqual(maximum_rectangular_submatrix_area(lst), 6)
+
+
+    def test_largest_word(self):
+        '''
+            Function to test finding largest word in a list
+        '''
+        words = ["ale", "applepae", "monkey", "apple", "plea"]
+        self.assertEqual(get_largest_word(words, 'abpcplea'), 'applepae')
