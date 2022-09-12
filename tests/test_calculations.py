@@ -3,7 +3,11 @@
 '''
 
 import unittest
+import inspect
 from calculations.students_grade_calculator import Student
+from calculations.code_analyzer import validate
+from calculations.create_process_matrix import (final_result,
+    create_process_matrix)
 
 class TestCalculations(unittest.TestCase):
     '''
@@ -26,3 +30,16 @@ class TestCalculations(unittest.TestCase):
         student_obj.calculate_class_result()
         self.assertEqual(student_obj.class_average, 60.58)
         self.assertEqual(student_obj.class_grade, 'D')
+
+    def test_code_analyzer(self):
+        '''
+            Function to test source code analyzer
+        '''
+        mycode = inspect.getsource(validate)
+        self.assertTrue(validate(mycode))
+
+        mycode = inspect.getsource(final_result)
+        self.assertEqual(validate(mycode), "wrong name")
+
+        mycode = inspect.getsource(create_process_matrix)
+        self.assertEqual(validate(mycode), "wrong name")
