@@ -10,6 +10,7 @@ from strings.generate_words_from_random_string import generate_words_from_random
 from strings.check_balanced_brackets import is_balanced_brackets
 from strings.is_palindrome import is_string_palindrome, is_phrase_palindrome
 from strings.count_possible_decodings import count_possible_decodings
+from strings.string_formation_count import count_string_formation
 
 class TestStringMethods(unittest.TestCase):
     '''
@@ -66,3 +67,9 @@ class TestStringMethods(unittest.TestCase):
         self.assertEqual(count_possible_decodings('12321'), 6)
         self.assertEqual(count_possible_decodings('121'), 3)
         self.assertEqual(count_possible_decodings('1234'), 3)
+
+    def test_string_formation_count(self):
+        '''
+            Function to test to count the number of strings of length n
+        '''
+        self.assertEqual(count_string_formation(4, 1, 2), 39)
