@@ -11,6 +11,7 @@ from lists.maximum_rectangular_submatrix_area import (
     maximum_rectangular_submatrix_area
 )
 from lists.largest_word import get_largest_word
+from lists.check_employee_entry_time import check_employee_entry_time
 
 class TestListsMethods(unittest.TestCase):
     '''
@@ -83,3 +84,12 @@ class TestListsMethods(unittest.TestCase):
         '''
         words = ["ale", "applepae", "monkey", "apple", "plea"]
         self.assertEqual(get_largest_word(words, 'abpcplea'), 'applepae')
+
+    def test_check_employee_entry_time(self):
+        '''
+            Function to test employee entry time checker
+        '''
+        input1 = ["cris", "peter", "gorge", "Hendry", "jatin", "cris", "Hendry", "Malik", "peter"]
+        input2 = ["11:30", "12:10", "14:00", "16:00", "10:40", "12:00", "15:40", "15:30", "16:00"]
+        expected = ["cris", "Hendry"]
+        self.assertEqual(check_employee_entry_time(input1, input2), expected)
