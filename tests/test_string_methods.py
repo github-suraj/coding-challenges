@@ -11,6 +11,7 @@ from strings.check_balanced_brackets import is_balanced_brackets
 from strings.is_palindrome import is_string_palindrome, is_phrase_palindrome
 from strings.count_possible_decodings import count_possible_decodings
 from strings.string_formation_count import count_string_formation
+from strings.string_compression import compression
 
 class TestStringMethods(unittest.TestCase):
     '''
@@ -73,3 +74,10 @@ class TestStringMethods(unittest.TestCase):
             Function to test to count the number of strings of length n
         '''
         self.assertEqual(count_string_formation(4, 1, 2), 39)
+
+    def test_string_compression(self):
+        '''
+            Function to test string compression
+        '''
+        self.assertEqual(compression('hello'), 'hel2o')
+        self.assertEqual(compression('aaabbcdda'), 'a3b2cd2a')
