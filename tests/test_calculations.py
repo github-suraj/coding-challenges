@@ -8,6 +8,7 @@ from calculations.students_grade_calculator import Student
 from calculations.code_analyzer import validate
 from calculations.create_process_matrix import (final_result,
     create_process_matrix)
+from calculations.key_combinations import number_of_key_combinations
 
 class TestCalculations(unittest.TestCase):
     '''
@@ -43,3 +44,21 @@ class TestCalculations(unittest.TestCase):
 
         mycode = inspect.getsource(create_process_matrix)
         self.assertEqual(validate(mycode), "wrong name")
+
+    def test_key_combinations(self):
+        '''
+            Function to test finding different combinations
+                robbery team have to check
+        '''
+        cases = [
+            (1, 5),
+            (4, 50),
+            (5, 500),
+            (6, 500),
+            (10, 50000),
+            (20, 5000000000),
+            (25, 5000000000000),
+            (30, 500000000000000)
+        ]
+        for num, result in cases:
+            self.assertEqual(number_of_key_combinations(num), result)
