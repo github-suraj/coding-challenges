@@ -9,6 +9,7 @@ from calculations.code_analyzer import validate
 from calculations.create_process_matrix import (final_result,
     create_process_matrix)
 from calculations.key_combinations import number_of_key_combinations
+from calculations.ways_to_pay_amount import ways_to_pay_amount
 
 class TestCalculations(unittest.TestCase):
     '''
@@ -62,3 +63,20 @@ class TestCalculations(unittest.TestCase):
         ]
         for num, result in cases:
             self.assertEqual(number_of_key_combinations(num), result)
+
+    def test_ways_to_pay_amount(self):
+        '''
+            Function to test to fing how many ways you can pay N rupees with
+                1 rupee, 2 rupee & 5 rupee denominations
+        '''
+        cases = [
+            (1, 0),
+            (11, 0),
+            (12, 1),
+            (14, 1),
+            (20, 4),
+            (21, 5),
+            (30, 12)
+        ]
+        for amount, result in cases:
+            self.assertEqual(ways_to_pay_amount(amount), result)
