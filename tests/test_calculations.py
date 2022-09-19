@@ -10,6 +10,7 @@ from calculations.create_process_matrix import (final_result,
     create_process_matrix)
 from calculations.key_combinations import number_of_key_combinations
 from calculations.ways_to_pay_amount import ways_to_pay_amount
+from calculations.ways_a_person_can_travel import ways_a_person_can_travel
 
 class TestCalculations(unittest.TestCase):
     '''
@@ -80,3 +81,19 @@ class TestCalculations(unittest.TestCase):
         ]
         for amount, result in cases:
             self.assertEqual(ways_to_pay_amount(amount), result)
+
+    def test_ways_a_person_can_travel(self):
+        '''
+            Function to test how many ways a person can travel
+        '''
+        cases = [
+            (2, 1),
+            (4, 10),
+            (5, 35),
+            (6, 126),
+            (7, 462),
+            (8, 1716),
+            (10, 24310)
+        ]
+        for size, result in cases:
+            self.assertEqual(ways_a_person_can_travel(size), result)
